@@ -25,7 +25,7 @@ class GuzzleAdapter implements ClientInterface
     /**
      * @param Client|null $client
      */
-    public function __construct(Client $client = null)
+    public function __construct(?Client $client = null)
     {
         $this->guzzle = $client ?: new Client();
     }
