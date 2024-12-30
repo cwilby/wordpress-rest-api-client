@@ -30,12 +30,12 @@ abstract class AbstractWpEndpoint
 
     /**
      * @param int $id
-     * @param array $params - parameters that can be passed to GET
+     * @param array|null $params - parameters that can be passed to GET
      *        e.g. for tags: https://developer.wordpress.org/rest-api/reference/tags/#arguments
      * @return array
      * @throws \RuntimeException
      */
-    public function get($id = null, array $params = null)
+    public function get($id = null, ?array $params = null)
     {
         $uri = $this->getEndpoint();
         $uri .= (is_null($id)?'': '/' . $id);
